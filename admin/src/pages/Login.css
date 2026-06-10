@@ -1,0 +1,51 @@
+.login-page { min-height: 100vh; background: #1A1A2E; display: flex; align-items: center; justify-content: center; padding: 24px; }
+
+.login-card {
+  background: #1E1B3A; border-radius: 16px;
+  padding: 38px 34px; width: 100%; max-width: 400px;
+  position: relative; overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,.55);
+}
+.login-glow { position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(124,58,237,.18) 0%, transparent 65%); pointer-events: none; }
+
+.login-logo { text-align: center; margin-bottom: 30px; position: relative; }
+.login-icon { width: 54px; height: 54px; background: linear-gradient(135deg,#9B5BF0,#6D28D9); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
+.login-brand { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #fff; letter-spacing: -.02em; margin-bottom: 4px; }
+.login-brand-sub { font-size: 12px; color: #7B6FA8; }
+
+.lf-group { margin-bottom: 16px; }
+.lf-group label { display: block; font-size: 10px; font-weight: 700; color: #7B6FA8; text-transform: uppercase; letter-spacing: .09em; margin-bottom: 7px; }
+
+.lf-input {
+  width: 100%;
+  background: rgba(255,255,255,.06);
+  border: 1.5px solid rgba(255,255,255,.1);
+  border-radius: 9px; padding: 11px 14px;
+  font-size: 13px; color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  transition: border-color .15s;
+}
+.lf-input:focus, .lf-input.focus { border-color: #9B5BF0; background: rgba(124,58,237,.1); outline: none; }
+.lf-input::placeholder { color: #4A4470; }
+
+.lf-pwd { position: relative; }
+.lf-eye { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 16px; }
+
+.lf-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.lf-remember { display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 12px; color: #7B6FA8; }
+.lf-cb { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid rgba(124,58,237,.6); background: rgba(124,58,237,.2); }
+.lf-forgot { font-size: 12px; color: #9B5BF0; cursor: pointer; }
+.lf-forgot:hover { text-decoration: underline; }
+
+.lf-btn {
+  width: 100%;
+  background: linear-gradient(135deg,#9B5BF0,#6D28D9);
+  color: #fff; font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px; font-weight: 600;
+  padding: 13px; border-radius: 9px; border: none;
+  cursor: pointer; letter-spacing: .02em; transition: opacity .15s;
+}
+.lf-btn:hover { opacity: .9; }
+.lf-btn:disabled { opacity: .6; cursor: not-allowed; }
+
+.lf-secure { text-align: center; margin-top: 18px; font-size: 11px; color: #4A4470; }

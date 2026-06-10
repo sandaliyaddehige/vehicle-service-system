@@ -1,0 +1,97 @@
+.admin-sidebar {
+  background: #1E1B3A;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  margin-bottom: 10px;
+}
+
+.sidebar-logo-icon {
+  width: 30px; height: 30px;
+  background: #7C3AED;
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -.01em;
+}
+
+.sidebar-brand-sub { font-size: 9px; color: #5B527A; letter-spacing: .1em; text-transform: uppercase; }
+
+.sidebar-section-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: #3A3660;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: 6px 10px 4px;
+}
+
+.sidebar-nav { display: flex; flex-direction: column; gap: 2px; }
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #5B527A;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .15s;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sidebar-item:hover { color: #9B8FCC; background: rgba(124,58,237,.1); }
+
+.sidebar-item.active {
+  background: rgba(124,58,237,.25);
+  color: #C4B0F8;
+}
+
+.sidebar-icon { font-size: 15px; }
+
+.sidebar-divider { height: 1px; background: #2D2B50; margin: 8px 4px; }
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  margin-top: auto;
+}
+
+.sidebar-avatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: #7C3AED;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+
+.sidebar-user-name { font-size: 12px; color: #C4BBEA; font-weight: 500; }
+.sidebar-user-role { font-size: 10px; color: #5B527A; }
+
+.sidebar-item.logout { color: #7B6FA8; margin-top: 4px; }
+.sidebar-item.logout:hover { color: #EF9393; background: rgba(220,38,38,.1); }

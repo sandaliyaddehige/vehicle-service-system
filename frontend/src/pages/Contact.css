@@ -1,0 +1,47 @@
+.contact-page { background: var(--surface2); }
+.contact-hero { background: #1E1B3A; padding: 28px 0; }
+.contact-hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.contact-title { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.contact-title span { color: #AFA9EC; }
+.contact-sub { font-size: 13px; color: #7B6FA8; }
+
+.working-hours { background: rgba(124,58,237,.15); border: 0.5px solid rgba(124,58,237,.3); border-radius: 12px; padding: 16px 20px; min-width: 200px; }
+.wh-title { font-size: 11px; color: #AFA9EC; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
+.wh-row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 0.5px solid rgba(255,255,255,.06); font-size: 12px; color: #9B8FCC; }
+.wh-row:last-child { border-bottom: none; }
+.wh-time { color: #C4BBEA; font-weight: 600; }
+
+.contact-body { max-width: 1100px; margin: 0 auto; padding: 24px 28px 48px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 280px; gap: 16px; }
+
+.contact-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.contact-info-card { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; }
+.ci-icon { width: 36px; height: 36px; background: var(--brand-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+.ci-title { font-size: 10px; color: var(--text-3); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 3px; }
+.ci-main { font-size: 13px; font-weight: 600; color: var(--text-1); margin-bottom: 2px; }
+.ci-sub { font-size: 11px; color: var(--text-2); }
+
+.msg-card { overflow: hidden; }
+.msg-card-header { padding: 13px 18px; border-bottom: 1px solid var(--border); font-size: 14px; font-weight: 700; color: var(--text-1); display: flex; align-items: center; justify-content: space-between; }
+.msg-reply { font-size: 11px; color: var(--text-3); font-weight: 400; }
+.msg-form { padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+.msg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.inquiry-types { display: flex; gap: 7px; flex-wrap: wrap; }
+.inq-type { padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border); font-size: 12px; color: var(--text-2); cursor: pointer; background: #fff; transition: all .12s; }
+.inq-type.active { background: var(--brand-light); border-color: var(--brand); color: var(--brand); font-weight: 600; }
+
+.location-card { overflow: hidden; }
+.map-placeholder { background: var(--surface2); height: 130px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-bottom: 1px solid var(--border); font-size: 28px; }
+.map-placeholder span { font-size: 12px; color: var(--text-3); }
+.location-footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; }
+.lf-title { font-size: 12px; font-weight: 600; color: var(--text-1); }
+.lf-sub { font-size: 11px; color: var(--text-2); }
+.direction-btn { font-size: 12px; color: var(--brand); font-weight: 600; background: var(--brand-light); border: none; border-radius: 7px; padding: 7px 12px; cursor: pointer; }
+
+.faq-card { overflow: hidden; }
+.faq-title { padding: 13px 16px; border-bottom: 1px solid var(--border); font-size: 14px; font-weight: 700; color: var(--text-1); }
+.faq-item { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-size: 12px; font-weight: 600; color: var(--text-1); margin-bottom: 3px; }
+.faq-a { font-size: 12px; color: var(--text-2); line-height: 1.5; }

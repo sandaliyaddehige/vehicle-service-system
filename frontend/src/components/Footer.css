@@ -1,0 +1,260 @@
+/* ==========================================
+   Fuchsius Premium Footer Styles
+   ========================================== */
+.footer { 
+  background: #1E1B3A; /* Brand Dark Background */
+  padding: 48px 0 0; /* උඩ padding එක තව ටිකක් වැඩි කරා balance වෙන්න */
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.footer-inner { 
+  max-width: 1280px; 
+  margin: 0 auto; 
+  padding: 0 28px; 
+}
+
+/* Grid setup */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 32px; /* Gap එක තව ටිකක් වැඩි කරා */
+  margin-bottom: 24px;
+  padding-bottom: 28px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Logo & Brand Name */
+.footer-logo { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  margin-bottom: 14px; 
+}
+
+.footer-logo-icon {
+  width: 32px; 
+  height: 32px;
+  background: #7C3AED; /* Brand Purple */
+  border-radius: 8px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+}
+
+.footer-brand-name { 
+  font-size: 15px; 
+  font-weight: 700; 
+  color: #ffffff; 
+  font-family: 'Space Grotesk', sans-serif; 
+  letter-spacing: 0.5px;
+}
+
+.footer-brand-sub { 
+  font-size: 9px; 
+  color: #AFA9EC; /* වඩාත් පැහැදිලි ළා දම් පාටක් දුන්නා */
+  letter-spacing: .12em; 
+  text-transform: uppercase; 
+  font-weight: 600;
+}
+
+/* Description text */
+.footer-desc { 
+  font-size: 13px; 
+  color: #AFA9EC; /* කියවන්න පහසු වෙන්න text color එක ලස්සන කරා */
+  line-height: 1.6; 
+  max-width: 240px; 
+  margin-bottom: 16px; 
+}
+
+/* Social Buttons */
+.footer-socials { 
+  display: flex; 
+  gap: 8px; 
+}
+
+.social-btn {
+  width: 32px; 
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  color: #C4BBEA;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-size: 14px; 
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.social-btn:hover { 
+  background: #7C3AED; 
+  color: #ffffff;
+  border-color: #7C3AED;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+}
+
+/* Column Title */
+.footer-col-title { 
+  font-size: 11px; 
+  font-weight: 700; 
+  color: #9B8FCC; 
+  text-transform: uppercase; 
+  letter-spacing: .12em; 
+  margin-bottom: 16px; 
+}
+
+/* Links List */
+.footer-links { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 9px; 
+}
+
+.footer-links a { 
+  font-size: 13px; 
+  color: #C4BBEA; /* Links ටික පැහැදිලිව පේන්න color එක වෙනස් කරා */
+  text-decoration: none; 
+  transition: all 0.15s ease; 
+}
+
+.footer-links a:hover { 
+  color: #ffffff; /* Hover කරද්දී සුදු පාටින් කැපිලා පේනවා */
+  padding-left: 4px; /* පොඩි smooth shift එකක් */
+}
+
+/* Contact Info Items */
+.footer-contact { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.contact-item { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 8px; 
+}
+
+.contact-icon { 
+  font-size: 14px; 
+  color: #AFA9EC; /* Icon එක වඩාත් කැපිලා පේන්න හැදුවා */
+  flex-shrink: 0; 
+  margin-top: 2px; 
+}
+
+.contact-item span:last-child { 
+  font-size: 13px; 
+  color: #C4BBEA; /* Address, Email පැහැදිලිව පේන්න හැදුවා */
+  line-height: 1.5; 
+}
+
+/* Working Hours Section */
+.footer-hours {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 14px 0;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.02); /* පොඩි background tint එකක් දුන්නා */
+  border-radius: 8px;
+}
+
+.hours-item { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+  font-size: 12px; 
+  color: #C4BBEA; 
+}
+
+.hours-time { 
+  color: #ffffff; 
+  font-weight: 600; 
+}
+
+.hours-closed { 
+  color: #ef4444; /* Closed එක රතු පාටින් ලස්සන කරා */
+  font-weight: 600; 
+}
+
+.hours-div { 
+  width: 1px; 
+  height: 14px; 
+  background: rgba(255, 255, 255, 0.15); 
+}
+
+/* Footer Bottom Part */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0 20px;
+}
+
+.footer-copy { 
+  font-size: 12px; 
+  color: #7B6FA8; 
+}
+
+/* Secure Badge */
+.footer-secure {
+  font-size: 11px;
+  color: #AFA9EC;
+  background: rgba(124, 58, 237, 0.15);
+  border: 0.5px solid rgba(124, 58, 237, 0.3);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Policies */
+.footer-policies { 
+  display: flex; 
+  gap: 16px; 
+}
+
+.footer-policies span { 
+  font-size: 12px; 
+  color: #7B6FA8; 
+  cursor: pointer; 
+  transition: color 0.15s; 
+}
+
+.footer-policies span:hover { 
+  color: #ffffff; 
+}
+
+/* Responsive Setup */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .footer-hours {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+  .hours-div {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

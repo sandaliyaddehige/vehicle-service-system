@@ -1,0 +1,43 @@
+.services-page { background: var(--surface2); min-height: calc(100vh - 56px); }
+.srv-hero { background: #1E1B3A; padding: 28px 0; }
+.srv-hero-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; }
+.srv-eyebrow { font-size: 11px; color: #7B6FA8; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 8px; }
+.srv-title { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.srv-title span { color: #AFA9EC; }
+.srv-sub { font-size: 13px; color: #7B6FA8; line-height: 1.5; }
+.srv-hero-stats { display: flex; gap: 28px; }
+.srv-stat { text-align: center; }
+.srv-stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #fff; }
+.srv-stat-label { font-size: 11px; color: #7B6FA8; margin-top: 2px; }
+
+.srv-body { max-width: 1100px; margin: 0 auto; padding: 24px 28px 48px; }
+
+.srv-toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.srv-search {
+  display: flex; align-items: center; gap: 8px;
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 14px; flex: 1; min-width: 200px;
+}
+.srv-search input { background: none; border: none; font-size: 12px; color: var(--text-1); width: 100%; }
+.srv-search input::placeholder { color: var(--text-3); }
+.srv-cats { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.srv-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 20px; }
+@media (max-width: 800px) { .srv-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 520px) { .srv-grid { grid-template-columns: 1fr; } }
+
+.srv-card { padding: 18px; }
+.srv-card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+.srv-card-icon { width: 40px; height: 40px; background: var(--brand-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.service-badge { font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+.srv-name { font-size: 14px; font-weight: 700; color: var(--text-1); margin-bottom: 5px; }
+.srv-desc { font-size: 12px; color: var(--text-2); line-height: 1.55; margin-bottom: 14px; }
+.srv-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--border); }
+.srv-price { font-size: 15px; font-weight: 700; color: var(--text-1); }
+.srv-duration { font-size: 11px; color: var(--text-3); }
+
+.trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; padding: 18px 22px; }
+.trust-strip-item { display: flex; align-items: flex-start; gap: 10px; }
+.trust-strip-icon { width: 34px; height: 34px; background: var(--brand-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+.trust-strip-title { font-size: 12px; font-weight: 600; color: var(--text-1); margin-bottom: 2px; }
+.trust-strip-desc { font-size: 11px; color: var(--text-2); }

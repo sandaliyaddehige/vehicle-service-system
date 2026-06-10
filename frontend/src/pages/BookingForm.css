@@ -1,0 +1,674 @@
+/* ==========================================================================
+   FUCHSIUS VEHICLE SERVICE BOOKING FORM STYLES (FULLY UPDATED)
+   ========================================================================== */
+
+:root {
+  --container-max: 1200px;
+  --container-pad: 24px;
+}
+
+/* ── 1. Main Page Layout Setup ── */
+.booking-page {
+  background: #F4F3FA; /* Light background matching dashboard body */
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── 2. Dark Hero Top Dashboard Banner Section ── */
+.mb-hero {
+  background: #1E1B3A; /* Deep premium dark theme matching top navbar */
+  padding: 48px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mb-hero-inner {
+  width: 100%;
+  max-width: var(--container-max);
+  padding: 0 var(--container-pad);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.mb-eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #9B5BF0; /* Accent Purple */
+  font-weight: 700;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.mb-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px 0;
+  letter-spacing: -.02em;
+}
+
+.mb-sub {
+  font-size: 13px;
+  color: #9B8FCC;
+  margin: 0;
+}
+
+/* Working Hours Card inside Dark Hero Banner */
+.working-hours-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 16px 20px;
+  min-width: 240px;
+}
+
+.working-hours-card h3 {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #9B8FCC;
+  margin: 0 0 12px 0;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.hours-row:last-child {
+  margin-bottom: 0;
+}
+
+.hours-row span:first-child {
+  color: #7B6FA8;
+}
+
+.hours-row span.closed {
+  color: #EF9393; /* Red/coral shade for closed status */
+  font-weight: 600;
+}
+
+/* ── 3. Page Main Body Content Layout ── */
+.mb-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 60px 0;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.booking-main-layout {
+  width: 100%;
+  max-width: var(--container-max);
+  padding: 0 var(--container-pad);
+  box-sizing: border-box;
+}
+
+.booking-form-area {
+  width: 100%;
+  max-width: 760px; /* Perfectly centered clean form width */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Universal Card Base Styling */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(30, 27, 58, 0.06);
+  box-shadow: 0 4px 20px rgba(30, 27, 58, 0.02);
+}
+
+/* ── 4. Horizontal Inline Progress Stepper Tracker ── */
+.inline-stepper-card {
+  padding: 18px 24px;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Progress steps background connecting track line */
+.progress-steps::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background: #EBE9F5;
+  z-index: 1;
+}
+
+.prog-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.prog-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #F1EFF8;
+  color: #7B6FA8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  border: 2px solid #ffffff;
+}
+
+.prog-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #7B6FA8;
+  transition: all 0.2s ease;
+}
+
+/* Active & Done Stepper States */
+.prog-step.active .prog-circle {
+  background: #9B5BF0;
+  color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(155, 91, 240, 0.15);
+}
+
+.prog-step.active .prog-label {
+  color: #1E1B3A;
+  font-weight: 600;
+}
+
+.prog-step.done .prog-circle {
+  background: #10B981; /* Green success state */
+  color: #ffffff;
+}
+
+.prog-step.done .prog-label {
+  color: #10B981;
+}
+
+/* ── 5. Main Form Cards & Elements ── */
+.form-card {
+  padding: 32px;
+}
+
+.form-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1E1B3A;
+  margin: 0 0 24px 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #F1EFF8;
+}
+
+/* Fields Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #5C5775;
+}
+
+/* Input Fields Styling Fix */
+.form-input {
+  padding: 11px 14px;
+  border: 1px solid #D6D2E8;
+  border-radius: 8px;
+  font-size: 13px;
+  background: #ffffff;
+  transition: all 0.15s ease;
+  color: #1E1B3A !important;
+  font-weight: 500;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #9B5BF0;
+  box-shadow: 0 0 0 3px rgba(155, 91, 240, 0.12);
+}
+
+/* Webkit Autofill Overrides */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover, 
+.form-input:-webkit-autofill:focus {
+  border: 1px solid #D6D2E8;
+  -webkit-text-fill-color: #1E1B3A !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-input::placeholder {
+  color: #A39EB2 !important;
+  opacity: 0.7 !important;
+  font-weight: 400;
+}
+
+.form-input option {
+  color: #1E1B3A !important;
+}
+
+.form-input.error {
+  border-color: #EF4444;
+  background-color: #FFFDFD;
+}
+
+.field-error {
+  font-size: 11px;
+  color: #EF4444;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* ── 6. Form Footers & Action Buttons ── */
+.form-footer {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #F1EFF8;
+  padding-top: 20px;
+}
+
+.btn-primary {
+  background: #9B5BF0;
+  color: #ffffff;
+  border: none;
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background: #843EE3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(155, 91, 240, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #D6D2E8;
+  color: #5C5775;
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-outline:hover {
+  background: #F8F7FC;
+  border-color: #9B5BF0;
+  color: #9B5BF0;
+}
+
+.back-link {
+  background: transparent;
+  border: none;
+  color: #7B6FA8;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  transition: color 0.12s;
+  padding: 0;
+}
+
+.back-link:hover {
+  color: #9B5BF0;
+}
+
+/* ── 7. Step 2: Calendar Container Styles ── */
+.cal-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #F8F7FC;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+
+.cal-month-badge {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: #1E1B3A;
+  font-size: 15px;
+}
+
+.cal-arrows-group {
+  display: flex;
+  gap: 6px;
+}
+
+.cal-arrow {
+  background: #ffffff;
+  border: 1px solid #E6E4F0;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #1E1B3A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.1s ease;
+}
+
+.cal-arrow:hover {
+  background: #9B5BF0;
+  color: #ffffff;
+  border-color: #9B5BF0;
+}
+
+/* Calendar Date Grid */
+.date-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+
+.date-cell {
+  padding: 12px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1E1B3A;
+  transition: all 0.1s ease;
+  background: #F8F7FC;
+}
+
+.date-cell.header {
+  font-weight: 700;
+  color: #7B6FA8;
+  background: transparent;
+  cursor: default;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.date-cell:not(.header):not(.disabled):hover {
+  background: rgba(155, 91, 240, 0.1);
+  color: #9B5BF0;
+}
+
+.date-cell.today {
+  border: 1px solid #9B5BF0;
+  color: #9B5BF0;
+  font-weight: 600;
+}
+
+.date-cell.selected {
+  background: #9B5BF0 !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(155, 91, 240, 0.2);
+}
+
+.date-cell.disabled {
+  color: #C2BED1;
+  background: #FDFDFD;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Time Slots Grid */
+.slots-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1E1B3A;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.time-slot {
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #D6D2E8;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #5C5775;
+  transition: all 0.12s;
+}
+
+.time-slot:hover {
+  border-color: #9B5BF0;
+  color: #9B5BF0;
+  background: rgba(155, 91, 240, 0.02);
+}
+
+.time-slot.selected {
+  background: rgba(155, 91, 240, 0.1);
+  color: #9B5BF0;
+  border-color: #9B5BF0;
+  font-weight: 600;
+}
+
+/* ── 8. Step 3 & Confirmation Pages ── */
+.confirm-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
+  background: #F8F7FC;
+  padding: 16px 20px;
+  border-radius: 10px;
+}
+
+.confirm-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #EBE9F5;
+  font-size: 13px;
+}
+
+.confirm-row:last-child {
+  border-bottom: none;
+}
+
+.confirm-label {
+  color: #7B6FA8;
+}
+
+.confirm-val {
+  font-weight: 600;
+  color: #1E1B3A;
+}
+
+.confirm-note {
+  font-size: 12px;
+  color: #5C5775;
+  background: #FFFBEB; /* Light yellowish attention color */
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #F59E0B;
+  line-height: 1.5;
+}
+
+/* ── 9. Confirmation Success Page Styles ── */
+.confirm-page {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F4F3FA;
+}
+
+.confirm-card {
+  max-width: 480px;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+}
+
+.success-icon {
+  width: 56px;
+  height: 56px;
+  background: #D1FAE5;
+  color: #059669;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto 20px auto;
+}
+
+.confirm-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  color: #1E1B3A;
+  margin: 0 0 10px 0;
+}
+
+.confirm-sub {
+  font-size: 13px;
+  color: #7B6FA8;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+.ref-num {
+  font-size: 18px;
+  font-weight: 700;
+  color: #9B5BF0;
+  background: rgba(155, 91, 240, 0.08);
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+
+.ref-details {
+  background: #F8F7FC;
+  padding: 16px 20px;
+  border-radius: 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ref-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.ref-label {
+  color: #7B6FA8;
+}
+
+.ref-val {
+  font-weight: 600;
+  color: #1E1B3A;
+}
+
+.badge-pending {
+  background: #FEF3C7;
+  color: #D97706;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ── 10. Mobile Responsive Layout Media Queries ── */
+@media (max-width: 768px) {
+  .mb-hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  
+  .working-hours-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .progress-steps::before {
+    display: none;
+  }
+  
+  .progress-steps {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .prog-step {
+    flex-direction: row;
+    gap: 12px;
+  }
+  
+  .form-card {
+    padding: 20px;
+  }
+}
