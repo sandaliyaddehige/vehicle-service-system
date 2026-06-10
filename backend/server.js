@@ -8,8 +8,16 @@ connectDB();
 
 const app = express();
 
-// Middleware - Allow all origins for deployment testing
-app.use(cors());
+// --- CORS Configured with Environment Variables ---
+const allowedOrigins = process.env.ALLOWED_ORIGINS 
+  ? process.env.ALLOWED_ORIGINS.split(",") 
+  : ["http://localhost:5173", "http://localhost:5174"]; // local run වෙනකොට fallback එකක් විදියට
+
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true // Cookies හෝ Authorization headers යවනවා නම් මේක වැදගත්
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
