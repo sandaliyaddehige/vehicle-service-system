@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: process.env.REACT_APP_API_URL || 'https://vehicle-service-system-production.up.railway.app/api' });
+const API = axios.create({ 
+  baseURL: import.meta.env.VITE_API_BASE_URL 
+    ? `${import.meta.env.VITE_API_BASE_URL}/api` 
+    : 'https://vehicle-service-system-production.up.railway.app/api' 
+});
 
 // Add token to every request
 API.interceptors.request.use((config) => {
