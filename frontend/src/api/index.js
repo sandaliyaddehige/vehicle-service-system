@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-
+// Create React App (react-scripts) වල Env කියවන්නේ process.env හරහායි
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL 
-    ? `${import.meta.env.VITE_API_BASE_URL}/api` 
-    : 'http://localhost:5000/api', 
+  baseURL: process.env.REACT_APP_API_URL 
+    ? `${process.env.REACT_APP_API_URL}/api` 
+    : 'https://vehicle-service-system-production.up.railway.app/api', 
 });
 
 // 🚀 Attach JWT token on every request (Admin & Customer Auto-detect)
@@ -20,7 +20,6 @@ API.interceptors.request.use((config) => {
   } else if (user?.token) {
     config.headers.Authorization = `Bearer ${user.token}`;
   } else if (localStorage.getItem('token')) {
-    
     config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
   }
   
@@ -32,7 +31,6 @@ API.interceptors.response.use(
   (res) => res,
   (error) => {
     if (error.response?.status === 401) {
-      
       localStorage.removeItem('fuchsiusAdmin');
       localStorage.removeItem('fuchsiusUser');
       localStorage.removeItem('user');
@@ -43,19 +41,24 @@ API.interceptors.response.use(
 );
 
 // ── AUTH ──
+// 💡 බිල්ඩ් එරර් එක හැදීමට loginUser සහ loginAdmin දෙකම export කර ඇත
+export const loginUser     = (data) => API.post('/auth/login', data);
 export const loginAdmin    = (data) => API.post('/auth/login', data);
+export const registerUser  = (data) => API.post('/auth/register', data);
 export const getMe         = ()     => API.get('/auth/me');
 
 // ── DASHBOARD ──
 export const getDashboardStats = () => API.get('/bookings/stats');
 
 // ── BOOKINGS ──
+export const createBooking       = (data) => API.post('/bookings', data);
 export const getBookings         = (p) => API.get('/bookings', { params: p });
 export const getBookingById      = (id) => API.get(`/bookings/${id}`);
 export const updateBookingStatus = (id, data) => API.put(`/bookings/${id}/status`, data);
 export const deleteBooking       = (id) => API.delete(`/bookings/${id}`);
 
 // ── SERVICES ──
+export const getServices      = (p)      => API.get('/services', { params: p });
 export const getAllServices   = ()       => API.get('/services/admin');
 export const createService   = (data)   => API.post('/services', data);
 export const updateService   = (id, d)  => API.put(`/services/${id}`, d);
