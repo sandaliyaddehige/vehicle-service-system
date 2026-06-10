@@ -8,16 +8,8 @@ connectDB();
 
 const app = express();
 
-// Middleware - allow both frontend (3000) and admin (3001)
-app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:3001'
-  ],
-  credentials: true
-}));
+// Middleware - Allow all origins for deployment testing
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
