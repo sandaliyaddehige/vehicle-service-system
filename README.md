@@ -31,6 +31,40 @@ Designed and developed as a collaborative final project within a 1-month interns
 
 ---
 
+## 📁 Structure
+- backend/   → API Server        (Port 5000)
+- frontend/  → Customer Website  (Port 3000)
+- admin/     → Admin Panel       (Port 3001)
+
+## ⚙️ MongoDB Setup
+backend/.env file edit:
+MONGO_URI=mongodb+srv://vehicle:Vehicle123@cluster0.XXXXXXX.mongodb.net/fuchsius?retryWrites=true&w=majority
+(cluster0.XXXXXXX.mongodb.net →   replace your Atlas URL )
+
+## 🚀 Run
+
+Terminal 1 - Backend:
+  cd backend && npm install && npm run dev
+
+Terminal 2 - Seed data (once):
+  cd backend && node seed.js
+
+Terminal 3 - Customer site:
+  cd frontend && npm install && npm start
+
+Terminal 4 - Admin panel:
+  cd admin && npm install && npm start
+
+## 🌐 URLs
+Customer: http://localhost:3000
+Admin:    http://localhost:3001
+API:      http://localhost:5000/api
+
+## 🔐 Admin Login
+Email:    admin@fuchsius.lk
+Password: admin123
+
+
 ## 📂 Project Folder Structure
 
 ```text
