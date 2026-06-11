@@ -82,7 +82,7 @@ export default function Login() {
           </div>
 
           <button type="submit" className="login-btn" disabled={loading}>
-            {loading ? 'Signing in…' : 'Sign In to Admin Portal'}
+            {loading ? 'Signing in…' : 'Sign In to Dashboard'}
           </button>
         </form>
 
