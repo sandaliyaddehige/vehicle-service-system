@@ -8,9 +8,6 @@ const NAV = [
   { to: '/customers', icon: '👥', label: 'Customers' },
   { to: '/services',  icon: '🔧', label: 'Services' },
 ];
-const CONFIG = [
-
-];
 
 export default function Sidebar() {
   const { pathname } = useLocation();
@@ -39,17 +36,6 @@ export default function Sidebar() {
       <div className="sb-section">Main</div>
       <nav className="sb-nav">
         {NAV.map(({ to, icon, label }) => (
-          <Link key={to} to={to} className={`sb-item ${active(to) ? 'active' : ''}`}>
-            <span className="sb-icon">{icon}</span>
-            <span>{label}</span>
-          </Link>
-        ))}
-      </nav>
-
-      <div className="sb-divider" />
-      <div className="sb-section">Config</div>
-      <nav className="sb-nav">
-        {CONFIG.map(({ to, icon, label }) => (
           <Link key={to} to={to} className={`sb-item ${active(to) ? 'active' : ''}`}>
             <span className="sb-icon">{icon}</span>
             <span>{label}</span>
