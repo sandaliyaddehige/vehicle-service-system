@@ -8,14 +8,24 @@ connectDB();
 
 const app = express();
 
-// --- CORS Configured with Environment Variables ---
-const allowedOrigins = process.env.ALLOWED_ORIGINS 
-  ? process.env.ALLOWED_ORIGINS.split(",") 
-  : ["http://localhost:5173", "http://localhost:5174"]; // local run වෙනකොට fallback එකක් විදියට
+// Allow Vercel production domains + localhost for development
+const allowedOriginPatterns = process.env.ALLOWED_ORIGINS 
+  ? process.env.ALLOWED_ORIGINS.split(",").map(o => o.trim())
+  : [];
 
 app.use(cors({
-    origin: allowedOrigins,
-    credentials: true // Cookies හෝ Authorization headers යවනවා නම් මේක වැදගත්
+  origin: (origin, callback) => {
+    // allow server-to-server requests (no origin) and local dev
+    if (!origin) return callback(null, true);
+    // allow if it's in the explicit list
+    if (allowedOriginPatterns.includes(origin)) return callback(null, true);
+    // allow any vercel.app subdomain (covers preview + production deploys)
+    if (/\.vercel\.app$/.test(origin)) return callback(null, true);
+    // allow localhost on any port
+    if (/^http:\/\/localhost(:\d+)?$/.test(origin)) return callback(null, true);
+    callback(new Error(`CORS not allowed for origin: ${origin}`));
+  },
+  credentials: true,
 }));
 
 app.use(express.json());

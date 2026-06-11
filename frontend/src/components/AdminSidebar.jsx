@@ -13,7 +13,7 @@ const NAV = [
 export default function Sidebar() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const { admin, logout } = useAuth();
+  const { user, logout } = useAuth();
 
   const active = (to) => to === '/' ? pathname === '/' : pathname.startsWith(to);
 
@@ -47,11 +47,11 @@ export default function Sidebar() {
       {/* Bottom: user + logout */}
       <div style={{ marginTop: 'auto' }}>
         <div className="sb-divider" />
-        {admin && (
+        {user && (
           <div className="sb-user">
-            <div className="sb-avatar">{admin.username?.slice(0,2).toUpperCase()}</div>
+            <div className="sb-avatar">{user.username?.slice(0,2).toUpperCase()}</div>
             <div>
-              <div className="sb-uname">{admin.username}</div>
+              <div className="sb-uname">{user.username}</div>
               <div className="sb-urole">Administrator</div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAllServicesAdmin, createService, updateService, deleteService } from '../../api';
+import { getAllServices, createService, updateService, deleteService } from '../../api';
 import AdminSidebar from '../../components/AdminSidebar';
 import toast from 'react-hot-toast';
 import '../admin/AdminDashboard.css';
@@ -14,7 +14,7 @@ export default function AdminServices() {
   const [loading, setLoading] = useState(true);
 
   const fetchServices = () => {
-    getAllServicesAdmin()
+    getAllServices()
       .then(({ data }) => setServices(data))
       .catch(() => toast.error('Failed to load'))
       .finally(() => setLoading(false));
