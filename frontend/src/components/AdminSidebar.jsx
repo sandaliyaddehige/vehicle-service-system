@@ -4,13 +4,9 @@ import './AdminSidebar.css';
 
 const menuItems = [
   { label: 'Dashboard', icon: '📊', to: '/admin' },
-  { label: 'Bookings', icon: '📅', to: '/admin/bookings' },
+  { label: 'Bookings',  icon: '📅', to: '/admin/bookings' },
   { label: 'Customers', icon: '👥', to: '/admin/customers' },
-];
-
-const configItems = [
-  { label: 'Services', icon: '🔧', to: '/admin/services' },
-  { label: 'Reports', icon: '📈', to: '/admin/reports' },
+  { label: 'Services',  icon: '🔧', to: '/admin/services' },
 ];
 
 export default function AdminSidebar() {
@@ -28,6 +24,7 @@ export default function AdminSidebar() {
 
   return (
     <aside className="admin-sidebar">
+      {/* Logo */}
       <div className="sidebar-logo">
         <div className="sidebar-logo-icon">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -41,6 +38,7 @@ export default function AdminSidebar() {
         </div>
       </div>
 
+      {/* Main Navigation */}
       <div className="sidebar-section-label">Main</div>
       <nav className="sidebar-nav">
         {menuItems.map((item) => (
@@ -56,22 +54,8 @@ export default function AdminSidebar() {
       </nav>
 
       <div className="sidebar-divider" />
-      <div className="sidebar-section-label">Config</div>
-      <nav className="sidebar-nav">
-        {configItems.map((item) => (
-          <Link
-            key={item.to}
-            to={item.to}
-            className={`sidebar-item ${isActive(item.to) ? 'active' : ''}`}
-          >
-            <span className="sidebar-icon">{item.icon}</span>
-            <span>{item.label}</span>
-          </Link>
-        ))}
-      </nav>
 
-      <div className="sidebar-divider" />
-
+      {/* User Info */}
       <div className="sidebar-user">
         <div className="sidebar-avatar">
           {user?.username?.slice(0, 2).toUpperCase()}
@@ -82,6 +66,7 @@ export default function AdminSidebar() {
         </div>
       </div>
 
+      {/* Logout Button */}
       <button className="sidebar-item logout" onClick={handleLogout}>
         <span className="sidebar-icon">🔒</span>
         <span>Logout</span>
