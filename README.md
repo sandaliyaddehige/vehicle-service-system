@@ -27,7 +27,7 @@ Designed and developed as a collaborative final project within a 1-month interns
 *   **Backend:** Node.js, Express.js
 *   **Database:** MongoDB (Mongoose ODM)
 *   **Security:** JSON Web Tokens (JWT) & Bcrypt for password hashing
-*   **Deployment:** Frontend hosted on **Vercel** / Backend hosted on **Render**
+*   **Deployment:** Frontend hosted on **Vercel** / Backend hosted on **Railway**
 
 ---
 
