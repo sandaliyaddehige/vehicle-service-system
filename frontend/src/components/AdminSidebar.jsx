@@ -1,76 +1,65 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import './AdminSidebar.css';
+import './Sidebar.css';
 
-const menuItems = [
-  { label: 'Dashboard', icon: '📊', to: '/admin' },
-  { label: 'Bookings',  icon: '📅', to: '/admin/bookings' },
-  { label: 'Customers', icon: '👥', to: '/admin/customers' },
-  { label: 'Services',  icon: '🔧', to: '/admin/services' },
+const NAV = [
+  { to: '/',          icon: '📊', label: 'Dashboard' },
+  { to: '/bookings',  icon: '📅', label: 'Bookings' },
+  { to: '/customers', icon: '👥', label: 'Customers' },
+  { to: '/services',  icon: '🔧', label: 'Services' },
 ];
 
-export default function AdminSidebar() {
-  const location = useLocation();
+export default function Sidebar() {
+  const { pathname } = useLocation();
   const navigate = useNavigate();
-  const { user, logout } = useAuth();
+  const { admin, logout } = useAuth();
 
-  const isActive = (path) =>
-    path === '/admin' ? location.pathname === '/admin' : location.pathname.startsWith(path);
-
-  const handleLogout = () => {
-    logout();
-    navigate('/login');
-  };
+  const active = (to) => to === '/' ? pathname === '/' : pathname.startsWith(to);
 
   return (
-    <aside className="admin-sidebar">
+    <aside className="sidebar-fixed">
       {/* Logo */}
-      <div className="sidebar-logo">
-        <div className="sidebar-logo-icon">
+      <div className="sb-logo">
+        <div className="sb-logo-icon">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M2 8L8 2L14 8L8 14L2 8Z" fill="white" opacity=".9"/>
             <circle cx="8" cy="8" r="2.5" fill="white"/>
           </svg>
         </div>
         <div>
-          <div className="sidebar-brand">FUCHSIUS</div>
-          <div className="sidebar-brand-sub">Admin Portal</div>
+          <div className="sb-brand">FUCHSIUS</div>
+          <div className="sb-sub">Admin Portal</div>
         </div>
       </div>
 
-      {/* Main Navigation */}
-      <div className="sidebar-section-label">Main</div>
-      <nav className="sidebar-nav">
-        {menuItems.map((item) => (
-          <Link
-            key={item.to}
-            to={item.to}
-            className={`sidebar-item ${isActive(item.to) ? 'active' : ''}`}
-          >
-            <span className="sidebar-icon">{item.icon}</span>
-            <span>{item.label}</span>
+      {/* Main nav */}
+      <div className="sb-section">Main</div>
+      <nav className="sb-nav">
+        {NAV.map(({ to, icon, label }) => (
+          <Link key={to} to={to} className={`sb-item ${active(to) ? 'active' : ''}`}>
+            <span className="sb-icon">{icon}</span>
+            <span>{label}</span>
           </Link>
         ))}
       </nav>
 
-      <div className="sidebar-divider" />
-
-      {/* User Info */}
-      <div className="sidebar-user">
-        <div className="sidebar-avatar">
-          {user?.username?.slice(0, 2).toUpperCase()}
-        </div>
-        <div className="sidebar-user-info">
-          <div className="sidebar-user-name">{user?.username}</div>
-          <div className="sidebar-user-role">Administrator</div>
-        </div>
+      {/* Bottom: user + logout */}
+      <div style={{ marginTop: 'auto' }}>
+        <div className="sb-divider" />
+        {admin && (
+          <div className="sb-user">
+            <div className="sb-avatar">{admin.username?.slice(0,2).toUpperCase()}</div>
+            <div>
+              <div className="sb-uname">{admin.username}</div>
+              <div className="sb-urole">Administrator</div>
+            </div>
+          </div>
+        )}
+        <button className="sb-item sb-logout" onClick={() => { logout(); navigate('/login'); }}>
+          <span className="sb-icon">🔒</span>
+          <span>Logout</span>
+        </button>
       </div>
-
-      {/* Logout Button */}
-      <button className="sidebar-item logout" onClick={handleLogout}>
-        <span className="sidebar-icon">🔒</span>
-        <span>Logout</span>
-      </button>
     </aside>
   );
 }
