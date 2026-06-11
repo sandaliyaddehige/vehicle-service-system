@@ -9,8 +9,7 @@ const NAV = [
   { to: '/services',  icon: '🔧', label: 'Services' },
 ];
 const CONFIG = [
- // { to: '/services',  icon: '🔧', label: 'Services' },
-  //{ to: '/reports',   icon: '📈', label: 'Reports' },
+
 ];
 
 export default function Sidebar() {
