@@ -72,8 +72,23 @@ const bookingSchema = new mongoose.Schema(
 bookingSchema.pre('save', async function (next) {
   if (!this.referenceNumber) {
     const year = new Date().getFullYear();
-    const count = await mongoose.model('Booking').countDocuments();
-    this.referenceNumber = `FSB-${year}-${String(count + 1).padStart(4, '0')}`;
+    let referenceNumber;
+    let isUnique = false;
+
+    // Retry loop to guarantee uniqueness
+    while (!isUnique) {
+      // Use last 4 digits of timestamp + 2 random digits to avoid collisions
+      const timePart = Date.now().toString().slice(-4);
+      const randomPart = Math.floor(Math.random() * 90 + 10); // 10–99
+      referenceNumber = `FSB-${year}-${timePart}${randomPart}`;
+
+      const existing = await mongoose.model('Booking').findOne({ referenceNumber });
+      if (!existing) {
+        isUnique = true;
+      }
+    }
+
+    this.referenceNumber = referenceNumber;
   }
   next();
 });
